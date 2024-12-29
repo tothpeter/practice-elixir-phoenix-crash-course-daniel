@@ -49,5 +49,14 @@ defmodule ShopWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
+  plug :check_promo_code
   plug ShopWeb.Router
+
+  def check_promo_code(%Plug.Conn{} = conn, _opts) do
+    if conn.params["promo"] == "code" do
+      assign(conn, :promo, true)
+    else
+      assign(conn, :promo, false)
+    end
+  end
 end
