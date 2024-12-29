@@ -59,5 +59,4 @@ defmodule ShopWeb.Endpoint do
   def check_promo_code(conn, _opts) do
     assign(conn, :promo, false)
   end
-
 end
