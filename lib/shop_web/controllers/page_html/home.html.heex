@@ -3,6 +3,8 @@
 <h1>Welcome</h1>
 <h2>Subtext</h2>
 
+<a href={~p"/products?#{[param1: "value1"]}"}>All products</a>
+
 <hr class="my-10" />
 
 <p>Select your fav console:</p>
@@ -21,4 +23,8 @@
 
 <p>
   Selected: {@console}
+</p>
+
+<p>
+Full url: { url(~p"/products") }
 </p>
